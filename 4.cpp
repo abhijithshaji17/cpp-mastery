@@ -2,8 +2,10 @@
 using namespace std;
 int main(){
     int n,i;
-    for(i=1;i<=5;i++){
-        cout<<
-
+    cout<<"Enter the number of times to print: ";
+    cin>>n;
+    for(i=1;i<=n;i++){
+        cout<<"Hello"<<endl;
     }
+    return 0;
 }
