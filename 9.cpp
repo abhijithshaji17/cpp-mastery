@@ -6,7 +6,7 @@ int main(){
     cout<<"Enter a no.: ";
     cin>>n;
     for(i=0;n!=0;i++){
-        rev = rev*10 + n%10;
+        rev = n%10 + rev*10;
         n/=10;
     }
     cout<<"Reversed number = "<<rev<<endl;
