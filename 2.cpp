@@ -8,3 +8,7 @@ int main(){
     cout<<"Sum is "<<a+b<<endl;
     return 0;
 }
+/*
+    // Output:
+       Sum is 7
+*/
