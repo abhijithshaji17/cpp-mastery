@@ -1,13 +1,15 @@
-// Multiple line pattern 1
+// // Multiple line pattern 1.1
 #include<iostream>
 using namespace std;
 int main(){
-    int i,j;
-    for(i=1;i<6;i++){                 // . i for rows, j for iterating thru each row elements
+    int n,i,j;
+    cout<<"Enter the no. of rows: ";
+    cin>>n;
+    for(i=1;i<=n;i++){
         for(j=1;j<=i;j++){
             cout<<" "<<j;
         }
         cout<<endl;
     }
     return 0;
-} 
+}
