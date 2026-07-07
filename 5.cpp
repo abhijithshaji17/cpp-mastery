@@ -1,3 +1,4 @@
+// Multiple line pattern 1
 #include<iostream>
 using namespace std;
 int main(){
