@@ -27,3 +27,5 @@ Drop the last digit: n = 6 / 10 = 0
 
 Reversed no. = 76
 */
+
+// !! Careless misunderstanding: 6/10 10/6 6%10 10%6
