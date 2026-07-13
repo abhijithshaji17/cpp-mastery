@@ -12,10 +12,10 @@ class num{
             cout<<a<<endl;
         }
 };
-int main(){
-    num<int>obj1(10);
-    obj1.display();
-    num<float>obj2(1.1);
+int main(){                             //execution starts from the main func.
+    num<int>obj1(10);                   //num mein ek integer object made and called.
+    obj1.display();                     //another func. called to display it.
+    num<float>obj2(1.1);                //same things with another object 2.
     obj2.display();
     return 0;
 }
