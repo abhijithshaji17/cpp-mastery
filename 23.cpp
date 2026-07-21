@@ -1,88 +1,83 @@
-// Array operations: Insertion at Beginning, End, and Position N
 #include <iostream>
 using namespace std;
 
-// 1. Insert at Beginning
-void insertbeg(int a[], int &ub, int lb, int val) {
-    for (int i = ub; i >= lb; i--) {
-        a[i + 1] = a[i]; 
-    }
-    a[lb] = val;
-    ub++;
+// Print Array
+template <class T>
+void printArray(T arr[], int size) {
+    cout << "Array: ";
+    for (int i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;
 }
 
-// 2. Insert at End
-void insertend(int a[], int &ub, int val) {
-    ub++;
-    a[ub] = val;
+// Insert at Beginning
+template <class T>
+void insertBeginning(T arr[], int &size, T value) {
+    for (int i = size; i > 0; i--)
+        arr[i] = arr[i - 1];
+
+    arr[0] = value;
+    size++;
 }
 
-// 3. Insert at Position K (0-indexed)
-void insertpos(int a[], int &ub, int lb, int pos, int val) {
-    if (pos < lb || pos > ub + 1) {
-        cout << "\nInvalid position!\n";
+// Insert at End
+template <class T>
+void insertEnd(T arr[], int &size, T value) {
+    arr[size] = value;
+    size++;
+}
+
+// Insert at Position
+template <class T>
+void insertPosition(T arr[], int &size, int pos, T value) {
+    if (pos < 0 || pos > size) {
+        cout << "Invalid Position!" << endl;
         return;
     }
-    for (int i = ub; i >= pos; i--) {
-        a[i + 1] = a[i];
-    }
-    a[pos] = val;
-    ub++;
-}
 
-// Helper function to print array
-void printArray(int a[], int lb, int ub) {
-    cout << "[ ";
-    for (int i = lb; i <= ub; i++) {
-        cout << a[i] << " ";
-    }
-    cout << "]\n";
+    for (int i = size; i > pos; i--)
+        arr[i] = arr[i - 1];
+
+    arr[pos] = value;
+    size++;
 }
 
 int main() {
-    int a[20]; // Array with capacity up to 20
-    int lb = 0;
-    int n;
+    int arr[20];
+    int size;
 
-    cout << "Enter the number of initial array elements: ";
-    cin >> n;
+    cout << "Enter number of elements: ";
+    cin >> size;
 
-    int ub = n - 1; // Last valid index is n - 1
+    cout << "Enter elements:\n";
+    for (int i = 0; i < size; i++)
+        cin >> arr[i];
 
-    cout << "Enter array elements:\n";
-    for (int i = lb; i <= ub; i++) {
-        cout << "Element " << i + 1 << ": ";
-        cin >> a[i];
-    }
+    printArray(arr, size);
 
-    cout << "\nOriginal Array:\n";
-    printArray(a, lb, ub);
+    // Beginning
+    int value;
+    cout << "\nEnter value to insert at beginning: ";
+    cin >> value;
+    insertBeginning(arr, size, value);
+    printArray(arr, size);
 
-    // 1. Insert at Beginning
-    int valBeg;
-    cout << "\nEnter value to insert at BEGINNING: ";
-    cin >> valBeg;
-    insertbeg(a, ub, lb, valBeg);
-    cout << "After inserting at beginning:\n";
-    printArray(a, lb, ub);
+    // End
+    cout << "\nEnter value to insert at end: ";
+    cin >> value;
+    insertEnd(arr, size, value);
+    printArray(arr, size);
 
-    // 2. Insert at End
-    int valEnd;
-    cout << "\nEnter value to insert at END: ";
-    cin >> valEnd;
-    insertend(a, ub, valEnd);
-    cout << "After inserting at end:\n";
-    printArray(a, lb, ub);
-
-    // 3. Insert at specific Position (0-indexed)
-    int valPos, pos;
-    cout << "\nEnter position index (0 to " << ub + 1 << "): ";
+    // Position
+    int pos;
+    cout << "\nEnter position: ";
     cin >> pos;
-    cout << "Enter value to insert at position " << pos << ": ";
-    cin >> valPos;
-    insertpos(a, ub, lb, pos, valPos);
-    cout << "After inserting at position " << pos << ":\n";
-    printArray(a, lb, ub);
+
+    cout << "Enter value: ";
+    cin >> value;
+
+    insertPosition(arr, size, pos, value);
+    printArray(arr, size);
 
     return 0;
 }
