@@ -1,3 +1,4 @@
+// Insertion sort on Array using templates
 #include <iostream>
 using namespace std;
 
@@ -5,9 +6,10 @@ using namespace std;
 template <class T>
 void printArray(T arr[], int size) {
     cout << "Array: ";
+    cout<<"[";
     for (int i = 0; i < size; i++)
         cout << arr[i] << " ";
-    cout << endl;
+    cout<<"]";
 }
 
 // Insert at Beginning
