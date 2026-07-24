@@ -1,3 +1,4 @@
+// izmethod linearsearch
 #include <iostream>
 using namespace std;
 
@@ -16,7 +17,7 @@ int main(){
     cout<<"Enter the no. of array elements: ";
     cin>>n;
     // Read elements into the array
-    cout<<"Enter elements:\n";
+    cout<<"Enter elements: ";
     for (int i=0; i<n; i++) {
         cin>>a[i];
     }
